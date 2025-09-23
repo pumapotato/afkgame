@@ -1,19 +1,18 @@
 print("Hello world, from server! and your mom")
 
-task.wait(1)
+wait(1)
 
 local Players = game:GetService("Players")
 
 local LeaderboardModule = require(script.Leaderboard)
+local StatTrackingModule = require(script.StatTracking)
 
 
-
--- Players.PlayerAdded:Connect(function(Player)
---     print("Player connected!")
---     LeaderboardModule.leaderboardSetup(Player)
--- end)
-
-Players.PlayerAdded:Connect(LeaderboardModule.leaderboardSetup())
+Players.PlayerAdded:Connect(LeaderboardModule.LeaderboardInit())
 for _, player in ipairs(Players:GetPlayers()) do
-    LeaderboardModule.leaderboardSetup(player)
+    LeaderboardModule.LeaderboardInit(player)
 end
+
+wait(1)
+
+StatTrackingModule.Count()
