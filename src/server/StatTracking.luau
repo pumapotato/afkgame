@@ -12,4 +12,8 @@ function StatTracking.Count()
     end
 end
 
+function StatTracking.UpdateStreak()
+    --something
+end
+
 return StatTracking
