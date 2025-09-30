@@ -10,7 +10,6 @@ local StatTrackingModule = require(script.StatTracking)
 
 --Players.PlayerAdded:Connect(LeaderboardModule.LeaderboardInit())
 for _, player in ipairs(Players:GetPlayers()) do
-    print(player.UserId)
     LeaderboardModule.LeaderboardInit(player)
 end
 
